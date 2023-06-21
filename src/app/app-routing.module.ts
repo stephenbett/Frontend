@@ -6,6 +6,7 @@ import { SignupComponent } from './signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CoursesComponent } from './courses/courses.component';
 import { ApplicationFormComponent } from './application-form/application-form.component';
+import { ApplicationComponent } from './applications/applications.component';
 
 const routes: Routes = [
   {path: '',component:LandingPageComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path: 'dashboard',component:DashboardComponent},
   {path: 'courses',component:CoursesComponent},
-  {path: 'applcationform',component:ApplicationFormComponent}
+  {path: 'applcationform',component:ApplicationFormComponent},
+  {path:'applications',component: ApplicationComponent}
 ];
 
 @NgModule({

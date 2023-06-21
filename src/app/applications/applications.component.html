@@ -1,0 +1,40 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Application No</th>
+            <th>Full Name</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+           <tr *ngFor="let application of applicants">
+                <td>{{application.applicationNo}}</td>
+                <td>{{application.FullName}}</td>
+
+                
+
+            <td>
+
+                <button
+                type="button" class="btn btn-light mr-1"
+                mat-button color="primary" style="color: #fff; background-color: blue;"  mat-raised-button (click)="updateClick()">Update</button>
+
+                <button type="button" class="btn btn-light mr-1"
+                (click)="sendApproval()" style="color: #fff; background-color: #1bbb36;"
+                >
+                    Send for Appoval
+                </button>
+             
+                <button type="button" class="btn btn-light mr-1"
+                (click)="deleteClick(application.key)" style="color: #fff; background-color: #f10808;"
+                >
+                    Delete
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+

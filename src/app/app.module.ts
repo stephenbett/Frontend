@@ -19,6 +19,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CourseInfoComponent } from './course-info/course-info.component';
+import { ApplicationComponent } from './applications/applications.component';
 
 
 
@@ -34,7 +35,9 @@ import { CourseInfoComponent } from './course-info/course-info.component';
     DashboardComponent,
     CoursesComponent,
     ApplicationFormComponent,
-    CourseInfoComponent
+    CourseInfoComponent,
+    ApplicationComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -47,6 +50,8 @@ import { CourseInfoComponent } from './course-info/course-info.component';
     MatFormFieldModule,
     MatInputModule,
     MatProgressBarModule,
+    MatDialogModule
+
   ],
   providers: [UserService,DataService],
   bootstrap: [AppComponent]
