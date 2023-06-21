@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { HttpClient } from '@angular/common/http';
+import { ApplicationFormComponent } from '../application-form/application-form.component';
+import { MatDialog } from '@angular/material/dialog';
+import { CourseInfoComponent } from '../course-info/course-info.component';
 
 @Component({
   selector: 'app-courses',
@@ -13,15 +16,28 @@ export class CoursesComponent implements OnInit{
   applicant_form = false;
 
   constructor(private courseService: DataService,
-    private http:HttpClient) { }
+    private dialog:MatDialog) { }
 
-  applyClick(){
-    
-  }
+  
+  applyClick(course: any): void {
+      this.dialog.open(ApplicationFormComponent, {
+        width: '500px',
+        disableClose: true,
+        data:course
+        });
+    }
 
-  infoClick(){
-    
-  }
+
+infoClick(course: any): void {
+      this.dialog.open(CourseInfoComponent, {
+        width: '800px',
+        disableClose: true,
+        data:course
+        });
+    }
+
+
+  
   ngOnInit(): void {
     this.refreshCourseList();
   }

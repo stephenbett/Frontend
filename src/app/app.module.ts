@@ -11,6 +11,19 @@ import { CoursesComponent } from './courses/courses.component';
 import { UserService } from './user.service';
 import { DataService } from './data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ApplicationFormComponent } from './application-form/application-form.component';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { CourseInfoComponent } from './course-info/course-info.component';
+
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -19,12 +32,21 @@ import { HttpClientModule } from '@angular/common/http';
     LandingPageComponent,
     SignupComponent,
     DashboardComponent,
-    CoursesComponent
+    CoursesComponent,
+    ApplicationFormComponent,
+    CourseInfoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatProgressBarModule,
   ],
   providers: [UserService,DataService],
   bootstrap: [AppComponent]

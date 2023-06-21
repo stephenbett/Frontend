@@ -1,0 +1,37 @@
+<h1>Apply for a Course</h1>
+<mat-dialog-content style="color: #020202; background-color: #f2f2f2;">
+ <form >
+     <label for="name">First Name</label>
+     <br>
+     <input type="text" id="name" name="name" [(ngModel)]="formData.FirstName" required>
+     <br>
+     <label for="name">Surname</label><br>
+     <input type="text" id="name" name="name" [(ngModel)]="formData.Surname" required>
+     <br>
+     <label for="Date_of_Birth">Date of Birth</label>
+     <br>
+     <input type="date" id="Date_of_Birth" name="Date_of_Birth" [(ngModel)]="formData.Date_of_Birth"  required>
+     <br>
+     <label for="email">Email</label> 
+     <br>
+     <input type="email" id="email" name="email" [(ngModel)]="formData.Email"required>
+     <br>
+     <label for="number">Phone number</label>
+     <br>
+     <input type="text" id="number" name="number" [(ngModel)]="formData.Phone_No"required minlength="10" >
+     <br>
+     <label for="text">COURSE</label>
+     <br>
+     <input readonly="true" type="text" id="course" name="course" [(ngModel)]="formData.courseName">
+   </form>
+ </mat-dialog-content>
+   
+     <!-- Add more input fields as needed -->
+   
+     <!-- <button type="submit" (ngSubmit)="onapply()">Saubmit</button>
+   </form> -->
+   
+<mat-dialog-actions style="justify-content: flex-end;">
+ <button mat-button mat-dialog-close style="color: #000;">Cancel</button>
+ <button mat-button color="primary" style="color: #fff; background-color: blue;" (click)="onapply()">Apply </button>
+</mat-dialog-actions>
