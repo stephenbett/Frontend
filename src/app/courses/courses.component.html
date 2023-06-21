@@ -1,0 +1,38 @@
+<h1>Course List</h1>
+
+<table class="table table-striped">
+  <thead>
+      <tr>
+          <th>Course No</th>
+          <th>Course Name</th>
+          <th>School Name</th>
+          <th>Duration(Years)</th>
+
+
+      </tr>
+  </thead>
+  <tbody>
+    
+         <tr *ngFor="let course of courses">
+              <td>{{course.CourseNo}}</td>
+              <td>{{course.CourseName}}</td>             
+              <td>{{course.SchoolName}}</td>
+              <td>{{course.DurationYears}}</td>
+
+          <td>
+            <button
+            type="button" class="btn btn-light mr-1"
+            mat-button color="primary" style="color: #fff; background-color: rgb(57, 57, 173);"  mat-raised-button (click)="infoClick()">Info
+            </button>
+          </td>
+          <td>
+            <button
+            type="button" class="btn btn-light mr-1"
+            mat-button color="primary" style="color: #fff; background-color: rgb(57, 57, 192);"  mat-raised-button (click)="applyClick()">Apply
+            </button>
+             
+          </td>
+      </tr>
+  </tbody>
+</table>
+
