@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { ApplicationFormComponent } from '../application-form/application-form.component';
 import { MatDialog } from '@angular/material/dialog';
 import { CourseInfoComponent } from '../course-info/course-info.component';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-courses',
@@ -14,23 +15,30 @@ export class CoursesComponent implements OnInit{
 
   courses: any=[];
   applicant_form = false;
+  applicants: any=[];
+  info:any=[];
+  users:any=[];
 
-  constructor(private courseService: DataService,
+  constructor(private courseService: DataService, private applicantservice: DataService, private userservice: UserService,
     private dialog:MatDialog) { }
 
   
-  applyClick(course: any): void {
+  applyClick(course: any, users: any): void {
       this.dialog.open(ApplicationFormComponent, {
-        width: '500px',
-        disableClose: true,
-        data:course
+        width: '800px',
+        disableClose: false,
+        data: course,
+        
+
+        // {coursesdata:course,
+        // applicantsdata:this.applicants}
         });
     }
 
 
 infoClick(course: any): void {
       this.dialog.open(CourseInfoComponent, {
-        width: '800px',
+        width: '500px',
         disableClose: true,
         data:course
         });
@@ -46,5 +54,13 @@ infoClick(course: any): void {
   refreshCourseList(){
     this.courseService.getCourses().subscribe(data=>{this.courses=data});
   }
+
+  refreshAppliantList(){
+    this.applicantservice.getApplicants().subscribe(data=>{this.applicants=data});
+    }
+
+    register() {
+      this.userservice.register(this.users).subscribe(info=>{this.users=info});
+    }
 
 }

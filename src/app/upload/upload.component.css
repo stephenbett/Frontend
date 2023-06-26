@@ -1,0 +1,14 @@
+h2 {
+    color: #0a0a0a;
+  }
+  
+  .file-input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .success-message {
+    color: green;
+    margin-top: 16px;
+  }

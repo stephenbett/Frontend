@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from '../user.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -8,21 +10,25 @@ import { UserService } from '../user.service';
 })
 export class LoginComponent {
 
-  email!: string;
-  password: string | undefined;
+  // email!: string;
+  // password: string | undefined;
 
-  constructor(private userService: UserService) { }
+  credentials = { 
+    Email: '',
+    PasswordHash: '',
+  };
+
+  constructor(private userService: UserService,private router: Router) { }
   
 
   login() {
-    var credentials = { 
-      email: this.email,
-      password: this.password };
+    
 
-    this.userService.login(credentials).subscribe(
+    this.userService.login(this.credentials).subscribe(
       response => {
         // Handle successful login response
         console.log('Login Sucessfull');
+        this.router.navigate(['/dashboard']);
       },
       error => {
         // Handle error response

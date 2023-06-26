@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -10,17 +11,21 @@ export class SignupComponent {
 
   successMessage ="Registered Successfully"
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
+  user = {
+      UserName: '',
+      Email: '', 
+      PasswordHash: ''
+       };
+
+       
 
   register() {
-    const user = {
-       name: '',
-       email: '', 
-       password: '' };
-    this.userService.register(user).subscribe(
+    this.userService.register(this.user).subscribe(
       response => {
         // Handle successful registration response
         console.log('Registered Successfull');
+        this.router.navigate(['/login']);
       },
       error => {
         // Handle error response

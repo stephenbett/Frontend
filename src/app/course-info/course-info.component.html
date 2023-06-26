@@ -1,19 +1,25 @@
 
 <mat-dialog-content style="color: #020202; background-color: #f2f2f2;">
  <form >
-     <input readonly="true" type="text" id="course" name="course" [(ngModel)]="coursedata.courseName">
+    <label for="name">Course No</label>
+    <br>
+     <input readonly="true" type="text" id="course" name="course" [value]="this.data.CourseNo">
      <br>
-     <input readonly="true" type="text" id="course" name="course" [(ngModel)]="coursedata.courseNo">
+     <label for="name">Course Name</label>
+    <br>
+     <input readonly="true" type="text" id="course" name="course" [value]="this.data.CourseName">
      <br>
-     <input readonly="true" type="text" id="course" name="course" [(ngModel)]="coursedata.SchoolName">
+     <label for="name">Duration in Years</label>
+    <br>
+     <input readonly="true" type="text" id="course" name="course" [value]="this.data.DurationYears">
      <br>
-     <input readonly="true" type="text" id="course" name="course" [(ngModel)]="coursedata.DurationYears">
+     <label for="name">School Name</label>
+    <br>
+     <input readonly="true" type="text" id="course" name="course" [value] ="this.data.SchoolName">
      <br>
-     <input readonly="true" type="text" id="course" name="course" [(ngModel)]="coursedata.DepartmentCode">
-     <br>
-     <input readonly="true" type="text" id="course" name="course" [(ngModel)]="coursedata.LevelOfStudy">
-
-
+     <label for="name">Level Of Study</label>
+    <br>
+     <input readonly="true" type="text" id="course" name="course" [value]="this.data.LevelOfStudy">
    </form>
  </mat-dialog-content>
    

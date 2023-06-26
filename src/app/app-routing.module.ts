@@ -7,6 +7,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CoursesComponent } from './courses/courses.component';
 import { ApplicationFormComponent } from './application-form/application-form.component';
 import { ApplicationComponent } from './applications/applications.component';
+import { UpdateComponent } from './update/update.component';
+import { UploadComponent } from './upload/upload.component';
+import { SignoutComponent } from './signout/signout.component';
 
 const routes: Routes = [
   {path: '',component:LandingPageComponent},
@@ -15,7 +18,10 @@ const routes: Routes = [
   {path: 'dashboard',component:DashboardComponent},
   {path: 'courses',component:CoursesComponent},
   {path: 'applcationform',component:ApplicationFormComponent},
-  {path:'applications',component: ApplicationComponent}
+  {path:'applications',component: ApplicationComponent},
+  {path: 'upload',component: UploadComponent},
+  {path:'update',component:UpdateComponent},
+  {path: 'signout',component:SignoutComponent}
 ];
 
 @NgModule({

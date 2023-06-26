@@ -1,24 +1,31 @@
+<app-dashboard></app-dashboard>
+
 <table class="table table-striped">
     <thead>
         <tr>
             <th>Application No</th>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Surname</th>
             <th>Full Name</th>
-
+            <th>Age</th>
 
         </tr>
     </thead>
     <tbody>
            <tr *ngFor="let application of applicants">
                 <td>{{application.applicationNo}}</td>
+                <td>{{application. FirstName}}</td>
+                <td>{{application.Surname}}</td>
                 <td>{{application.FullName}}</td>
-
-                
+                <td>{{application.Age}}</td>
 
             <td>
 
-                <button
-                type="button" class="btn btn-light mr-1"
-                mat-button color="primary" style="color: #fff; background-color: blue;"  mat-raised-button (click)="updateClick()">Update</button>
+                <button 
+            type="button" class="btn btn-light mr-1"
+            mat-button color="primary" style="color: #fff; background-color: rgb(57, 57, 192);"  mat-raised-button (click)="updateClick(applicants)">Update
+            </button>
 
                 <button type="button" class="btn btn-light mr-1"
                 (click)="sendApproval()" style="color: #fff; background-color: #1bbb36;"
@@ -29,7 +36,7 @@
                 <button type="button" class="btn btn-light mr-1"
                 (click)="deleteClick(application.key)" style="color: #fff; background-color: #f10808;"
                 >
-                    Delete
+                 Delete
                 </button>
             </td>
         </tr>

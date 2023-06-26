@@ -16,19 +16,23 @@ export class CourseInfoComponent {
     } 
 
 
-  coursedata = {
-    courseNo:this.data.courseNo,
-    courseName:this.data.CourseName,
-    SchoolName:this.data.SchoolName,
-    DurationYears:this.data.DurationYears,
-    DepartmentCode:this.data.DepartmentCode,
-    LevelOfStudy:this.data.LevelOfStudy,
-  };
+  // coursedata = {
+  //   courseNo:this.data.courseNo,
+  //   courseName:this.data.CourseName,
+  //   SchoolName:this.data.SchoolName,
+  //   DurationYears:this.data.DurationYears,
+  //   DepartmentCode:this.data.DepartmentCode,
+  //   LevelOfStudy:this.data.LevelOfStudy,
+  // };
   
 
-  oninfo() {
+  // oninfo() {
+  //   return this.coursedata.courseNo
+      
+  //   }
 
-    return this.coursedata
+  }
+
   //   this.http.post(url, this.formData).subscribe(
   //     (response) => {
   //       // Handle the response from the API
@@ -39,7 +43,6 @@ export class CourseInfoComponent {
   //       console.error(error);
   //     }
   //   );
-  }
+  
 
 
-}

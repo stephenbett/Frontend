@@ -18,6 +18,7 @@ export class DataService {
       return this.http.get(this.course_apiUrl + "Courses");
     }
 
+    
     getApplicants(){
       return  this.http.get(this.applicant_apiurl +"applicant")
     }

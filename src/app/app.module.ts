@@ -20,6 +20,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CourseInfoComponent } from './course-info/course-info.component';
 import { ApplicationComponent } from './applications/applications.component';
+import { UpdateComponent } from './update/update.component';
+import { UploadComponent } from './upload/upload.component';
+import { SignoutComponent } from './signout/signout.component';
 
 
 
@@ -37,6 +40,9 @@ import { ApplicationComponent } from './applications/applications.component';
     ApplicationFormComponent,
     CourseInfoComponent,
     ApplicationComponent,
+    UpdateComponent,
+    UploadComponent,
+    SignoutComponent,
   
   ],
   imports: [

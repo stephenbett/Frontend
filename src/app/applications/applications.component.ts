@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { UpdateComponent } from '../update/update.component';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-applications',
@@ -12,10 +14,12 @@ import { Router } from '@angular/router';
 
 export class ApplicationComponent implements  OnInit {
 
-  applicants:any= [];
-
+  users: any=[];
+ applicants:any= [];
+course: any=[]
   constructor(
               private applicantservice : DataService,
+              private userservice :UserService,
               private dialog: MatDialog ,
               private route:Router
               )
@@ -23,13 +27,25 @@ export class ApplicationComponent implements  OnInit {
   ngOnInit(): void {
     this.refreshAppliantList()
   }
-  updateClick(){}
-  // :void{
+
+  // updateClick(applicants:any):void{
   //   this.dialog.open(UpdateComponent, {
   //     width: '500px',
-  //     disableClose: true
+  //     disableClose: true,
+  //     data:{
+  //       coursesdata:this.course,
+  //       applicantsdata:this.applicants
+  //       }
   //     });
   // }   
+
+  updateClick(users:any):void{
+    this.dialog.open(UpdateComponent, {
+      width: '500px',
+      disableClose: true,
+      data:users
+      });
+  }   
 
   sendApproval()
   {
@@ -47,6 +63,10 @@ export class ApplicationComponent implements  OnInit {
 
   refreshAppliantList(){
     this.applicantservice.getApplicants().subscribe(data=>{this.applicants=data});
+    }
+
+    register() {
+      this.userservice.register(this.users).subscribe(info=>{this.users=info});
     }
     
   }

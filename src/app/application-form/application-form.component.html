@@ -1,9 +1,13 @@
 <h1>Apply for a Course</h1>
-<mat-dialog-content style="color: #020202; background-color: #f2f2f2;">
+<mat-dialog-content style="color: #292828; background-color: #ffffff;">
  <form >
      <label for="name">First Name</label>
      <br>
-     <input type="text" id="name" name="name" [(ngModel)]="formData.FirstName" required>
+     <input type="text" id="name" name="name" [(ngModel)]="formData.FirstName" required="true">
+     <br>
+     <label for="name">Middle Name</label><br>
+     <input type="text" id="name" name="name" [(ngModel)]="formData.MiddleName" required>
+     <br>
      <br>
      <label for="name">Surname</label><br>
      <input type="text" id="name" name="name" [(ngModel)]="formData.Surname" required>
@@ -20,17 +24,21 @@
      <br>
      <input type="text" id="number" name="number" [(ngModel)]="formData.Phone_No"required minlength="10" >
      <br>
-     <label for="text">COURSE</label>
+     <label for="number">ID No</label>
      <br>
-     <input readonly="true" type="text" id="course" name="course" [(ngModel)]="formData.courseName">
+     <input type="text" id="number" name="number" [(ngModel)]="formData.Id_No"required minlength="10" >
+     <br>
+     <label for="text">COURSE No</label>
+     <br>
+     <input readonly="true" type="text" id="course" name="course" [(ngModel)]="formData.CourseNo">
+     <br>
+     <label for="text">COURSE Name</label>
+     <br>
+     <input readonly="true" type="text" id="course" name="course" [(ngModel)]="formData.CourseName">
    </form>
  </mat-dialog-content>
    
-     <!-- Add more input fields as needed -->
-   
-     <!-- <button type="submit" (ngSubmit)="onapply()">Saubmit</button>
-   </form> -->
-   
+
 <mat-dialog-actions style="justify-content: flex-end;">
  <button mat-button mat-dialog-close style="color: #000;">Cancel</button>
  <button mat-button color="primary" style="color: #fff; background-color: blue;" (click)="onapply()">Apply </button>
