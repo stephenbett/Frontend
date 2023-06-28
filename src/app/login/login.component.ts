@@ -14,8 +14,9 @@ export class LoginComponent {
   // password: string | undefined;
 
   credentials = { 
-    Email: '',
-    PasswordHash: '',
+    username: '',
+    password: '',
+    grant_type :'password'
   };
 
   constructor(private userService: UserService,private router: Router) { }
@@ -25,7 +26,9 @@ export class LoginComponent {
     
 
     this.userService.login(this.credentials).subscribe(
+
       response => {
+        localStorage.setItem("token",response.access_token)
         // Handle successful login response
         console.log('Login Sucessfull');
         this.router.navigate(['/dashboard']);

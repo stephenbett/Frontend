@@ -23,6 +23,8 @@ import { ApplicationComponent } from './applications/applications.component';
 import { UpdateComponent } from './update/update.component';
 import { UploadComponent } from './upload/upload.component';
 import { SignoutComponent } from './signout/signout.component';
+import { UsercoursesComponent } from './usercourses/usercourses.component';
+import { UserProfileComponent } from './userprofile/userprofile.component';
 
 
 
@@ -43,6 +45,8 @@ import { SignoutComponent } from './signout/signout.component';
     UpdateComponent,
     UploadComponent,
     SignoutComponent,
+    UsercoursesComponent,
+    UserProfileComponent
   
   ],
   imports: [

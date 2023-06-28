@@ -10,6 +10,8 @@ import { ApplicationComponent } from './applications/applications.component';
 import { UpdateComponent } from './update/update.component';
 import { UploadComponent } from './upload/upload.component';
 import { SignoutComponent } from './signout/signout.component';
+import { UsercoursesComponent } from './usercourses/usercourses.component';
+import { UserProfileComponent } from './userprofile/userprofile.component';
 
 const routes: Routes = [
   {path: '',component:LandingPageComponent},
@@ -21,7 +23,10 @@ const routes: Routes = [
   {path:'applications',component: ApplicationComponent},
   {path: 'upload',component: UploadComponent},
   {path:'update',component:UpdateComponent},
-  {path: 'signout',component:SignoutComponent}
+  {path: 'signout',component:SignoutComponent},
+  {path: 'courselist',component:UsercoursesComponent},
+  {path:'user',component:UserProfileComponent}
+
 ];
 
 @NgModule({

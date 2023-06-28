@@ -1,4 +1,5 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Token } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -17,7 +18,20 @@ export class UserService {
   }
 
   login(credentials: any): Observable<any> {
-    return this.http.post(this.apiUrl +'login',credentials)
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded'
+    });
+    const encoded = `username=${credentials.username}&password=${credentials.password}&grant_type=${credentials.grant_type}`
+    return this.http.post(this.apiUrl +'token',encoded,{headers})
+
+  }
+  getUserDetails(user: any): Observable<any> {
+    const token =localStorage.getItem("token")
+    const headers =  new HttpHeaders({
+      "Authorization":`Bearer ${token}`
+
+    })
+    return this.http.get<any>(this.apiUrl +'userdetails',{headers})
 
   }
 

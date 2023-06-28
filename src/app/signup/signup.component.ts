@@ -13,9 +13,9 @@ export class SignupComponent {
 
   constructor(private userService: UserService, private router: Router) { }
   user = {
-      UserName: '',
+    UserName: '',
       Email: '', 
-      PasswordHash: ''
+      Password: ''
        };
 
        

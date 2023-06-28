@@ -4,20 +4,20 @@
     <form >
         <label for="name">First Name</label>
         <br>
-        <input  type="text" id="name" name="name" [(ngModel)]="updateData.FirstName" required>
+        <input  type="text" id="name" name="name" [(ngModel)]="data.FirstName" required>
         <br>
         <label for="name">Surname</label><br>
-        <input type="text" id="name" name="name" [(ngModel)]="updateData.Surname" required>   
+        <input type="text" id="name" name="name" [(ngModel)]="data.Surname" required>   
         <br>
         <label for="email">Email</label> 
         <br>
-        <input type="email" id="email" name="email" [(ngModel)]="updateData.Email"required>
+        <input type="email" id="email" name="email" [(ngModel)]="data.Email"required>
         <br>
         <label for="number">Phone number</label>
         <br>
-        <input type="text" id="number" name="number" [(ngModel)]="updateData.Phone_No"required>
+        <input type="text" id="number" name="number" [(ngModel)]="data.Phone_No"required>
         <br>
-        <input readonly="true" type="text" id="course" name="course" [value]="updateData.CourseNo">;
+        <input readonly="true" type="text" id="course" name="course" [value]="data.CourseNo">;
 
       </form>
   </div>

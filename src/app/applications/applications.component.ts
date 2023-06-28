@@ -15,6 +15,7 @@ import { UserService } from '../user.service';
 export class ApplicationComponent implements  OnInit {
 
   users: any=[];
+  user: any
  applicants:any= [];
 course: any=[]
   constructor(

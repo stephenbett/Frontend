@@ -10,11 +10,11 @@
                 <h2 class="form-title">LOGIN</h2>
                 <form method="POST" class="register-form" id="login-form">
 
-                    <label for="email"><i class="zmdi zmdi-email">Email</i></label>
-                    <input type="email" id="name" name="name" [(ngModel)]="credentials.Email" required>
+                    <label for="email"><i class="zmdi zmdi-email">UserName</i></label>
+                    <input type="email" id="name" name="name" [(ngModel)]="credentials.username" required>
                     <br>
                     <label for="pass"><i class="zmdi zmdi-lock">Password</i></label>
-                    <input type="password" id="name" name="name" [(ngModel)]="credentials.PasswordHash" required>
+                    <input type="password" id="name" name="name" [(ngModel)]="credentials.password" required>
 
                   
                     <div class="form-group form-button">
