@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
@@ -11,16 +12,26 @@ export class SignupComponent {
 
   successMessage ="Registered Successfully"
 
-  constructor(private userService: UserService, private router: Router) { }
   user = {
+    FirstName:'',
+    SurName:'',
+    PhoneNumber:'',
+    PostalCode:'',
     UserName: '',
-      Email: '', 
-      Password: ''
+    Id_No:'',
+    Email: '', 
+    Date_of_birth:'',
+    Password: ''
        };
 
+  constructor(private userService: UserService, private router: Router) {}
+    
+   
+  
        
-
   register() {
+    console.log(this.user)
+   
     this.userService.register(this.user).subscribe(
       response => {
         // Handle successful registration response
@@ -34,4 +45,14 @@ export class SignupComponent {
     );
   }
 
+
 }
+
+
+
+
+/*  this.formSubmitted = true;
+if (this.registerForm.invalid) {
+  return;
+}
+*/

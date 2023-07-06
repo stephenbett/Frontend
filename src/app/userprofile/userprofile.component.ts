@@ -12,11 +12,15 @@ export class UserProfileComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit() {
+    
     this.userService.getUserDetails(this.user ).subscribe(
+
       response => {
+        //console.log(response)
         // Assign the user details to the component variable
         this.user = response;
-        localStorage.setItem('email',  response.Email)
+        // localStorage.setItem('email', response.email,)
+        console.log(response)
         console.log(this.user)
       },
       error => {

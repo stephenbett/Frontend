@@ -5,6 +5,7 @@ import { ApplicationFormComponent } from '../application-form/application-form.c
 import { MatDialog } from '@angular/material/dialog';
 import { CourseInfoComponent } from '../course-info/course-info.component';
 import { UserService } from '../user.service';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-courses',
@@ -19,8 +20,27 @@ export class CoursesComponent implements OnInit{
   info:any=[];
   users:any=[];
 
+  displayedColumns: string[] = ['courseNo', 'courseName', 'schoolName', 'durationYears', 'actions'];
+  filteredCourses: MatTableDataSource<any>;
+  filterValue = '';
   constructor(private courseService: DataService, private applicantservice: DataService, private userservice: UserService,
-    private dialog:MatDialog) { }
+    private dialog:MatDialog)
+     {
+      this.filteredCourses = new MatTableDataSource(this.courses);
+      }
+
+
+      applyFilter(event: Event) {
+        const filterValue = (event.target as HTMLInputElement).value;
+        this.courses.filter = filterValue.trim().toLowerCase();
+      }
+      
+    
+      clearFilter(): void {
+        this.filterValue = '';
+        this.filteredCourses.filter = '';
+      }
+    
 
   
   applyClick(course: any, users: any): void {

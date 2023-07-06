@@ -12,7 +12,7 @@ import { UserService } from './user.service';
 import { DataService } from './data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ApplicationFormComponent } from './application-form/application-form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
@@ -25,6 +25,8 @@ import { UploadComponent } from './upload/upload.component';
 import { SignoutComponent } from './signout/signout.component';
 import { UsercoursesComponent } from './usercourses/usercourses.component';
 import { UserProfileComponent } from './userprofile/userprofile.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -60,7 +62,15 @@ import { UserProfileComponent } from './userprofile/userprofile.component';
     MatFormFieldModule,
     MatInputModule,
     MatProgressBarModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatTableModule,
+    MatIconModule,
+    MatInputModule,
+    
+    
+    
 
   ],
   providers: [UserService,DataService],

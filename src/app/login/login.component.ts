@@ -29,6 +29,10 @@ export class LoginComponent {
 
       response => {
         localStorage.setItem("token",response.access_token)
+        localStorage.setItem("email", response.email)
+        localStorage.setItem("username", response.username)
+        console.log(response)
+
         // Handle successful login response
         console.log('Login Sucessfull');
         this.router.navigate(['/dashboard']);

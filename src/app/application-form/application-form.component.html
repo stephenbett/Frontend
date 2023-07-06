@@ -23,18 +23,27 @@
      <label for="number">Phone number</label>
      <br>
      <input type="text" id="number" name="number" [(ngModel)]="formData.Phone_No"required minlength="10" >
+     <div *ngIf="phoneNoControl.invalid && (phoneNoControl.dirty || phoneNoControl.touched)">
+      <div *ngIf="phoneNoControl.errors">Phone number is required.</div>
+      <div *ngIf="phoneNoControl.errors">Phone number must be at least 10 digits.</div>
+     </div>
      <br>
      <label for="number">ID No</label>
      <br>
      <input type="text" id="number" name="number" [(ngModel)]="formData.Id_No"required minlength="10" >
+     <div *ngIf="idNoControl.invalid && (idNoControl.dirty || idNoControl.touched)">
+      <div *ngIf="idNoControl.errors">ID number is required.</div>
+      <div *ngIf="idNoControl.errors">ID number must be less than or equal to 8 digits.</div>
+      <div *ngIf="idNoExists">ID number already exists.</div>
+     </div>
      <br>
      <label for="text">COURSE No</label>
      <br>
-     <input readonly="true" type="text" id="course" name="course" [(ngModel)]="formData.CourseNo">
+     <input  type="text" id="courseno" name="courseNo" [(ngModel)]="formData.Course">  
      <br>
      <label for="text">COURSE Name</label>
      <br>
-     <input readonly="true" type="text" id="course" name="course" [(ngModel)]="formData.CourseName">
+    <input  type="text" id="coursename" name="courseName" [(ngModel)]="formData.CourseName">  
    </form>
  </mat-dialog-content>
    

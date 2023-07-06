@@ -1,21 +1,31 @@
 <h2 mat-dialog-title>Update Application</h2>
 <mat-dialog-content style="color: #020202; background-color: #f2f2f2;">
   <div>
+
+    <!-- {{data|json}} -->
     <form >
+      <label for="name">Application No</label>
+        <br>
+        <input readonly="true" type="text" id="name" name="ApplicationNo" [(ngModel)]="data.applicationNo" required>
+        <br>
         <label for="name">First Name</label>
         <br>
-        <input  type="text" id="name" name="name" [(ngModel)]="data.FirstName" required>
+        <input  type="text" id="name" name="Firstname" [(ngModel)]="data.FirstName" required>
+        <br>
+        <label for="name">Middle Name</label><br>
+        <input type="text" id="name" name="middleName" [(ngModel)]="data.middleName" required>   
+        <br>
         <br>
         <label for="name">Surname</label><br>
-        <input type="text" id="name" name="name" [(ngModel)]="data.Surname" required>   
+        <input type="text" id="name" name="Surname" [(ngModel)]="data.SurName" required>   
         <br>
         <label for="email">Email</label> 
         <br>
-        <input type="email" id="email" name="email" [(ngModel)]="data.Email"required>
+        <input type="email" id="email" name="email" [(ngModel)]="data.email"required>
         <br>
-        <label for="number">Phone number</label>
+        <label for="number">Address</label>
         <br>
-        <input type="text" id="number" name="number" [(ngModel)]="data.Phone_No"required>
+        <input type="text" id="number" name="number" [(ngModel)]="data.Address"required>
         <br>
         <input readonly="true" type="text" id="course" name="course" [value]="data.CourseNo">;
 
@@ -24,7 +34,7 @@
 </mat-dialog-content>
 <mat-dialog-actions style="justify-content: flex-end;">
   <button mat-button mat-dialog-close style="color: #faf9f9; background-color: rgb(126, 126, 133);">Cancel</button>
-  <button mat-button color="primary" style="color: #fff; background-color: blue;" (click)="onUpdate()"> Save</button>
+  <button mat-button color="primary" style="color: #fff; background-color: blue;" (click)="onUpdate(data.applicationNo)"> Save</button>
 </mat-dialog-actions>
 
 

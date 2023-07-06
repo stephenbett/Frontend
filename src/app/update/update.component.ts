@@ -38,16 +38,18 @@ export class UpdateComponent {
   };
   
 
-  onUpdate() {
+  onUpdate(applicationNo: string)  {
     var url = 'https://localhost:44395/api/applicant';
+    console.log(applicationNo)
 
-    this.http.put(url, this.updateData).subscribe(
+    this.http.put(url +"?applicationNo="+ applicationNo,this.data).subscribe(
       (response) => {
         // Handle the response from the API
+        
         console.log(response);
       },
       (error) => {
-        // Handle any errors that occur during the request
+        // Handle any errors that occur during            the request
         console.error(error);
       }
     );

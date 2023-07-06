@@ -16,7 +16,8 @@ export class ApplicationComponent implements  OnInit {
 
   users: any=[];
   user: any
- applicants:any= [];
+ application:any= [];
+ applicants:any[]=[];
 course: any=[]
   constructor(
               private applicantservice : DataService,
@@ -40,11 +41,12 @@ course: any=[]
   //     });
   // }   
 
-  updateClick(users:any):void{
+  updateClick(appication:any):void{
+    console.log(appication)
     this.dialog.open(UpdateComponent, {
       width: '500px',
-      disableClose: true,
-      data:users
+      disableClose: false,
+      data:appication
       });
   }   
 
@@ -63,7 +65,19 @@ course: any=[]
   }
 
   refreshAppliantList(){
-    this.applicantservice.getApplicants().subscribe(data=>{this.applicants=data});
+
+    this.applicantservice.getApplicants().subscribe({
+      next:(data: any) => {
+        console.log(data)
+        const email = localStorage.getItem('email')
+        console.log(email)
+      this.applicants=data.filter((x: { email: string | null; }) => x.email === email)
+      },
+      error: err => {
+        
+      }
+
+    });
     }
 
     register() {
@@ -72,3 +86,11 @@ course: any=[]
     
   }
 
+
+
+
+
+
+
+  //  this.applicantservice.getApplicants().subscribe(data=>{this.application=data});
+  

@@ -4,9 +4,25 @@
             <div class="signup-form">
                 <h2 class="form-title">Sign up</h2>
                 <form method="POST" class="register-form" id="register-form" (ngSubmit)="register()">
-                        <label for="name"><i class="zmdi zmdi-account material-icons-name"> UserName</i></label>
-                        <input type="text" id="name" name="name" [(ngModel)]="user.UserName" required>
+                    <label for="name"><i class="zmdi zmdi-account material-icons-name"> First Name</i></label>
+                        <input type="text" id="name" name="Fname" [(ngModel)]="user.FirstName"  required>
                         <br>
+                        <label for="name"><i class="zmdi zmdi-account material-icons-name">SurName</i></label>
+                        <input type="text" id="name" name="Sname" [(ngModel)]="user.SurName"  required>
+                        <br>
+                        <label for="name"><i class="zmdi zmdi-account material-icons-name"> UserName</i></label>
+                        <input type="text" id="name" name="name" [(ngModel)]="user.UserName"  required>
+                        <br>
+                        <label for="name"><i class="zmdi zmdi-account material-icons-name">ID Number</i></label>
+                        <input type="number" id="name" name="Id_No" [(ngModel)]="user.Id_No"  required>
+                        <br>
+                        <label for="name"><i class="zmdi zmdi-account material-icons-name">Phone Number</i></label>
+                        <input type="number" id="name" name="PhoneNo" [(ngModel)]="user.PhoneNumber"  required>
+                        <br>
+                        <label for="name"><i class="zmdi zmdi-account material-icons-name">Date of Birth</i></label>
+                        <input type="date" id="name" name="Date" [(ngModel)]="user.Date_of_birth" required>
+                        <br>
+                        
                         <label for="email"><i class="zmdi zmdi-email">Email</i></label>
                         <input type="email" id="name" name="name" [(ngModel)]="user.Email" required>
                         <br>
@@ -26,24 +42,102 @@
             </div>
         </div>
     </div>
-</section>
+</section> 
 
 
 
 
 
 
-<!-- <div class="form-group">
-    <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-    <!-- <input type="text" name="name" id="name" placeholder="UserName"required/>
-    <input type="text" id="name" name="name" [(ngModel)]="user.UserName" required>
+<!-- 
 
-</div>
-<div class="form-group">
-    <label for="email"><i class="zmdi zmdi-email"></i></label>
-    <input type="email" name="email" id="email" placeholder="Email" required/>
-</div>
-<div class="form-group">
-    <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-    <input type="password" name="pass" id="pass" placeholder="Password" required/>
-</div> -->
+<section class="signup">
+    <div class="container">
+      <div class="signup-content">
+        <div class="signup-form">
+          <h2 class="form-title">Sign up</h2>
+          <form [formGroup]="registerForm" (ngSubmit)="register()" id="register-form">
+            <div class="form-group">
+              <label for="fname"><i class="zmdi zmdi-account material-icons-name">First Name</i></label>
+              <input type="text" id="fname" name="Fname" formControlName="Fname">
+              <div class="error-message" *ngIf="formSubmitted && registerForm.controls['Fname'].invalid">
+                Please enter your first name.
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <label for="sname"><i class="zmdi zmdi-account material-icons-name">Surname</i></label>
+              <input type="text" id="sname" name="Sname" formControlName="Sname">
+              <div class="error-message" *ngIf="formSubmitted && registerForm.controls['Sname'].invalid">
+                Please enter your surname.
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <label for="username"><i class="zmdi zmdi-account material-icons-name">Username</i></label>
+              <input type="text" id="username" name="UserName" formControlName="UserName">
+              <div class="error-message" *ngIf="formSubmitted && registerForm.controls['UserName'].invalid">
+                Please enter a username.
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <label for="idno"><i class="zmdi zmdi-account material-icons-name">ID Number</i></label>
+              <input type="number" id="idno" name="Id_No" formControlName="Id_No">
+              <div class="error-message" *ngIf="formSubmitted && registerForm.controls['Id_No'].errors">
+                <div *ngIf="registerForm.controls['Id_No'].errors.required">Please enter your ID number.</div>
+                <div *ngIf="registerForm.controls['Id_No'].errors.minlength">ID number should have at least 6 digits.</div>
+                <div *ngIf="registerForm.controls['Id_No'].errors.maxlength">ID number should have at most 8 digits.</div>
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <label for="phoneno"><i class="zmdi zmdi-account material-icons-name">Phone Number</i></label>
+              <input type="number" id="phoneno" name="PhoneNo" formControlName="PhoneNo">
+              <div class="error-message" *ngIf="formSubmitted && registerForm.controls['PhoneNo'].errors">
+                <div *ngIf="registerForm.controls['PhoneNo'].errors.required">Please enter your phone number.</div>
+                <div *ngIf="registerForm.controls['PhoneNo'].errors.minlength">Phone number should have at least 10 digits.</div>
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <label for="dob"><i class="zmdi zmdi-account material-icons-name">Date of Birth</i></label>
+              <input type="date" id="dob" name="Date" formControlName="Date">
+              <div class="error-message" *ngIf="formSubmitted && registerForm.controls['Date'].invalid">
+                Please enter your date of birth.
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <label for="email"><i class="zmdi zmdi-email">Email</i></label>
+              <input type="email" id="email" name="Email" formControlName="Email">
+              <div class="error-message" *ngIf="formSubmitted && registerForm.controls['Email'].errors">
+                <div *ngIf="registerForm.controls['Email'].errors.required">Please enter your email address.</div>
+                <div *ngIf="registerForm.controls['Email'].errors.email">Please enter a valid email address.</div>
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <label for="password"><i class="zmdi zmdi-lock">Password</i></label>
+              <input type="password" id="password" name="Password" formControlName="Password">
+              <div class="error-message" *ngIf="formSubmitted && registerForm.controls['Password'].invalid">
+                Please enter a password.
+              </div>
+            </div>
+  
+            <div class="form-group form-button">
+              <input type="submit" name="signup" id="signup" class="form-submit" value="Register">
+              <a routerLink="/login">I am already a member</a>
+            </div>
+          </form>
+        </div>
+        <div class="signup-image">
+          <figure><img src="assets/img/signup-image.jpg" alt="sign up image"></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+     -->

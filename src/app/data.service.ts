@@ -28,7 +28,7 @@ export class DataService {
     }
     
     updateApplicant(val: any){
-      return this.http.put(this.applicant_apiurl + 'applicant',val)
+      return this.http.put(this.applicant_apiurl + 'updateApplicant',val)
     }
     
     deleteApplicant(val:any){
