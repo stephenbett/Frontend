@@ -15,6 +15,7 @@ export class SignupComponent {
   user = {
     FirstName:'',
     SurName:'',
+    MiddleName:'',
     PhoneNumber:'',
     PostalCode:'',
     UserName: '',
@@ -25,16 +26,15 @@ export class SignupComponent {
        };
 
   constructor(private userService: UserService, private router: Router) {}
-    
-   
-  
        
   register() {
     console.log(this.user)
    
     this.userService.register(this.user).subscribe(
       response => {
-        // Handle successful registration response
+
+        console.log(response)
+
         console.log('Registered Successfull');
         this.router.navigate(['/login']);
       },

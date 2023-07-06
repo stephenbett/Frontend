@@ -27,6 +27,7 @@ import { UsercoursesComponent } from './usercourses/usercourses.component';
 import { UserProfileComponent } from './userprofile/userprofile.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 
@@ -68,6 +69,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatTableModule,
     MatIconModule,
     MatInputModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule
     
     
     

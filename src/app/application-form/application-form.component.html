@@ -3,14 +3,14 @@
  <form >
      <label for="name">First Name</label>
      <br>
-     <input type="text" id="name" name="name" [(ngModel)]="formData.FirstName" required="true">
+     <input readonly="true" type="text" id="name" name="Fname" [(ngModel)]="user.FirstName" required="true">
      <br>
      <label for="name">Middle Name</label><br>
-     <input type="text" id="name" name="name" [(ngModel)]="formData.MiddleName" required>
+     <input readonly="true" type="text" id="name" name="Mname" [(ngModel)]="user.MiddleName" required>
      <br>
      <br>
      <label for="name">Surname</label><br>
-     <input type="text" id="name" name="name" [(ngModel)]="formData.Surname" required>
+     <input readonly="true" type="text" id="name" name="Sname" [(ngModel)]="user.SurName" required>
      <br>
      <label for="Date_of_Birth">Date of Birth</label>
      <br>
@@ -18,11 +18,11 @@
      <br>
      <label for="email">Email</label> 
      <br>
-     <input type="email" id="email" name="email" [(ngModel)]="formData.Email"required>
+     <input readonly="true" type="email" id="email" name="email" [(ngModel)]="user.Email"required>
      <br>
      <label for="number">Phone number</label>
      <br>
-     <input type="text" id="number" name="number" [(ngModel)]="formData.Phone_No"required minlength="10" >
+     <input readonly="true" type="text" id="number" name="Pnumber" [(ngModel)]="user.PhoneNumber"required minlength="10" >
      <div *ngIf="phoneNoControl.invalid && (phoneNoControl.dirty || phoneNoControl.touched)">
       <div *ngIf="phoneNoControl.errors">Phone number is required.</div>
       <div *ngIf="phoneNoControl.errors">Phone number must be at least 10 digits.</div>
@@ -44,7 +44,13 @@
      <label for="text">COURSE Name</label>
      <br>
     <input  type="text" id="coursename" name="courseName" [(ngModel)]="formData.CourseName">  
+
+    <div *ngIf="isLoading" class="loading-spinner">
+    <mat-spinner diameter="30"></mat-spinner>
+    </div>
+    <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
    </form>
+
  </mat-dialog-content>
    
 

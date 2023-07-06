@@ -3,3 +3,17 @@ h1{
     text-align: center;
     text-emphasis-style: bold;
 }
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .success-message {
+    color: green;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+  }
+  

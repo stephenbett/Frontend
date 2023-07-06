@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 
 export class UserService {
   private apiUrl = 'https://localhost:44340/';
+  private docUrl = 'https://localhost:44340/api/document/upload'
 
   constructor(private http: HttpClient) { }
 
@@ -39,6 +40,9 @@ export class UserService {
       return this.http.post(this.apiUrl +'logout', null)
     }
     
+    upload(_formData:any):Observable<any>{
+      return this.http.post(this.docUrl,_formData)
+    }
   
 }
 

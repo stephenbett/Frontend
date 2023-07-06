@@ -2,4 +2,4 @@
 
 <input type ="text" (change)="getName" #name/> <br/>
 <input type ="file" (change)="getFile($event)" style="color: black;"> <br/>
-<input type ="button" value="uploadFile" style="color: #0f0808; background-color: blue;" > <br/>
+<input type ="button" value="uploadFile" style="color: #0f0808; background-color: blue;"(click)="submitData()" > <br/>

@@ -31,6 +31,13 @@ export class LoginComponent {
         localStorage.setItem("token",response.access_token)
         localStorage.setItem("email", response.email)
         localStorage.setItem("username", response.username)
+        localStorage.setItem("FirstName",response.FirstName)
+        localStorage.setItem("SurName",response.SurName)
+        localStorage.setItem("PhoneNumber",response.PhoneNumber)
+        localStorage.setItem("Id_No",response.Id_No)
+        localStorage.setItem("Email",response.email)
+        localStorage.setItem("Date_of_birth",response.Date_of_Birth)
+        localStorage.setItem("FirstName",response.FirstName)
         console.log(response)
 
         // Handle successful login response
